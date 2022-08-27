@@ -1,7 +1,21 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { async } from "@firebase/util";
+import React, {useState} from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { UserAuth } from "../context/AuthContext";
 
 const Signin = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+  const { signIn } = UserAuth();
+
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+    
+  }
+
+
   return (
     <div className="max-w-[700px] mx-auto my-16 p-4">
       <div>
